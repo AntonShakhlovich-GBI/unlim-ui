@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ProductItem from "./ProductItem";
+import ProductItem from "./productItem";
 
 import "./App.css";
 
 const App = () => {
   const pageSize = 10; // Number of products per page
+  const maxDisplayedPages = 5;
 
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -58,19 +59,14 @@ const App = () => {
       });
   };
 
-  const handlePageChange = (newPage) => {
-    // Update the current page when user clicks on pagination links
-    setCurrentPage(newPage);
-  };
-
   const handleGoToPageChange = (event) => {
-    setGoToPage(parseInt(event.target.value, 10));
+    setGoToPage(parseInt(event.target.value, 10)); // Update the goToPage state
   };
 
   const handleGoToPageSubmit = (event) => {
     event.preventDefault();
     if (goToPage >= 1 && goToPage <= totalPages) {
-      setCurrentPage(goToPage);
+      setCurrentPage(goToPage); // Update currentPage based on the value of goToPage
     } else {
       alert(`Page should be between 1 and ${totalPages}`);
     }
@@ -87,11 +83,27 @@ const App = () => {
     fetchProducts();
   };
 
+  const getDisplayedPages = () => {
+    const displayedPages = [];
+    if (totalPages <= maxDisplayedPages) {
+      for (let i = 1; i <= totalPages; i++) {
+        displayedPages.push(i);
+      }
+    } else {
+      const start = Math.max(1, currentPage - 2);
+      const end = Math.min(start + maxDisplayedPages - 1, totalPages);
+      for (let i = start; i <= end; i++) {
+        displayedPages.push(i);
+      }
+    }
+    return displayedPages;
+  };
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <h1>Product List</h1>
+          <h1>UNLeashed IMagation</h1>
           <div className="product-search">
             <form onSubmit={handleSearchSubmit} className="form-inline">
               <div className="form-group">
@@ -103,7 +115,7 @@ const App = () => {
                   onChange={handleSearchChange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-light">
                 Search
               </button>
             </form>
@@ -136,23 +148,23 @@ const App = () => {
               >
                 <button
                   className="page-link"
-                  onClick={() => handlePageChange(currentPage - 1)}
+                  onClick={() => setCurrentPage(currentPage - 1)}
                 >
                   Previous
                 </button>
               </li>
-              {Array.from({ length: totalPages }, (_, index) => (
+              {getDisplayedPages().map((page) => (
                 <li
                   className={`page-item ${
-                    currentPage === index + 1 ? "active" : ""
+                    currentPage === page ? "active" : ""
                   }`}
-                  key={index}
+                  key={page}
                 >
                   <button
                     className="page-link"
-                    onClick={() => handlePageChange(index + 1)}
+                    onClick={() => setCurrentPage(page)}
                   >
-                    {index + 1}
+                    {page}
                   </button>
                 </li>
               ))}
@@ -163,7 +175,7 @@ const App = () => {
               >
                 <button
                   className="page-link"
-                  onClick={() => handlePageChange(currentPage + 1)}
+                  onClick={() => setCurrentPage(currentPage + 1)}
                 >
                   Next
                 </button>
@@ -176,7 +188,7 @@ const App = () => {
                 Go to Page:
                 <input
                   type="number"
-                  value={goToPage}
+                  value={goToPage} // Use the goToPage state here
                   onChange={handleGoToPageChange}
                   min="1"
                   max={totalPages}
