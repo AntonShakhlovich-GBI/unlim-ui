@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductItem from "./ProductItem";
@@ -75,7 +76,10 @@ const App = () => {
                     <h4>Attributes:</h4>
                     <ul>
                       {selectedProduct.attributes.map((attr) => (
-                        <li key={attr.name}>
+                        <li
+                          key={attr.name}
+                          className={attr.isSuggested ? "is-suggested" : ""}
+                        >
                           {attr.name}: {attr.value}
                         </li>
                       ))}

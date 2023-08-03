@@ -1,185 +1,94 @@
 {
     "products": [
         {
-          "id": 1,
-          "name": "T-Shirt",
-          "category": "Clothes",
-          "attributes": [
-            {"name": "Color", "value": "Black"},
-            {"name": "Size", "value": "L"}
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Jeans",
-          "category": "Clothes",
-          "attributes": [
-            {"name": "Color", "value": "Blue"},
-            {"name": "Size", "value": "M"}
-          ]
-        },
-        {
-          "id": 3,
-          "name": "Running Shoes",
-          "category": "Shoes",
-          "attributes": [
-            {"name": "Color", "value": "White"},
-            {"name": "Size", "value": "10"}
-          ]
-        },
-        {
-          "id": 4,
-          "name": "High Heels",
-          "category": "Shoes",
-          "attributes": [
-            {"name": "Color", "value": "Red"},
-            {"name": "Size", "value": "8"}
-          ]
-        },
-        {
-          "id": 5,
-          "name": "Blender",
-          "category": "Appliances",
-          "attributes": [
-            {"name": "Brand", "value": "XYZ"},
-            {"name": "Wattage", "value": "800W"}
-          ]
-        },
-        {
-          "id": 6,
-          "name": "Refrigerator",
-          "category": "Appliances",
-          "attributes": [
-            {"name": "Brand", "value": "ABC"},
-            {"name": "Capacity", "value": "300L"}
-          ]
-        },
-        {
-          "id": 7,
-          "name": "Necklace",
-          "category": "Jewelry",
-          "attributes": [
-            {"name": "Material", "value": "Gold"},
-            {"name": "Stone", "value": "Diamond"}
-          ]
-        },
-        {
-          "id": 8,
-          "name": "Earrings",
-          "category": "Jewelry",
-          "attributes": [
-            {"name": "Material", "value": "Silver"},
-            {"name": "Stone", "value": "Sapphire"}
-          ]
-        },
-        {
-          "id": 9,
-          "name": "Sofa",
-          "category": "Furniture",
-          "attributes": [
-            {"name": "Color", "value": "Grey"},
-            {"name": "Material", "value": "Fabric"}
-          ]
-        },
-        {
-          "id": 10,
-          "name": "Dining Table",
-          "category": "Furniture",
-          "attributes": [
-            {"name": "Color", "value": "Brown"},
-            {"name": "Material", "value": "Wood"}
-          ]
-        },
-        {
-          "id": 11,
-          "name": "Hoodie",
-          "category": "Clothes",
-          "attributes": [
-            {"name": "Color", "value": "Grey"},
-            {"name": "Size", "value": "XL"}
-          ]
-        },
-        {
-          "id": 12,
-          "name": "Sneakers",
-          "category": "Shoes",
-          "attributes": [
-            {"name": "Color", "value": "Black"},
-            {"name": "Size", "value": "9"}
-          ]
-        },
-        {
-          "id": 13,
-          "name": "Microwave",
-          "category": "Appliances",
-          "attributes": [
-            {"name": "Brand", "value": "PQR"},
-            {"name": "Wattage", "value": "1000W"}
-          ]
-        },
-        {
-          "id": 14,
-          "name": "Oven",
-          "category": "Appliances",
-          "attributes": [
-            {"name": "Brand", "value": "LMN"},
-            {"name": "Capacity", "value": "40L"}
-          ]
-        },
-        {
-          "id": 15,
-          "name": "Bracelet",
-          "category": "Jewelry",
-          "attributes": [
-            {"name": "Material", "value": "Silver"},
-            {"name": "Stone", "value": "Emerald"}
-          ]
-        },
-        {
-          "id": 16,
-          "name": "Ring",
-          "category": "Jewelry",
-          "attributes": [
-            {"name": "Material", "value": "Gold"},
-            {"name": "Stone", "value": "Ruby"}
-          ]
-        },
-        {
-          "id": 17,
-          "name": "Cabinet",
-          "category": "Furniture",
-          "attributes": [
-            {"name": "Color", "value": "White"},
-            {"name": "Material", "value": "Wood"}
-          ]
-        },
-        {
-          "id": 18,
-          "name": "Bed",
-          "category": "Furniture",
-          "attributes": [
-            {"name": "Color", "value": "Brown"},
-            {"name": "Material", "value": "Leather"}
-          ]
-        },
-        {
-          "id": 19,
-          "name": "Polo Shirt",
-          "category": "Clothes",
-          "attributes": [
-            {"name": "Color", "value": "Green"},
-            {"name": "Size", "value": "M"}
-          ]
-        },
-        {
-          "id": 20,
-          "name": "Sandals",
-          "category": "Shoes",
-          "attributes": [
-            {"name": "Color", "value": "Brown"},
-            {"name": "Size", "value": "7"}
-          ]
-        }
-      ]
-
+            "id": 1,
+            "name": "T-Shirt",
+            "category": "Clothes",
+            "attributes": [
+              {"name": "Color", "value": "Black", "isSuggested": true},
+              {"name": "Size", "value": "L", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Jeans",
+            "category": "Clothes",
+            "attributes": [
+              {"name": "Color", "value": "Blue", "isSuggested": false},
+              {"name": "Size", "value": "M", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Running Shoes",
+            "category": "Shoes",
+            "attributes": [
+              {"name": "Color", "value": "White", "isSuggested": true},
+              {"name": "Size", "value": "10", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 4,
+            "name": "High Heels",
+            "category": "Shoes",
+            "attributes": [
+              {"name": "Color", "value": "Red", "isSuggested": false},
+              {"name": "Size", "value": "8", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Blender",
+            "category": "Appliances",
+            "attributes": [
+              {"name": "Brand", "value": "XYZ", "isSuggested": false},
+              {"name": "Wattage", "value": "800W", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 6,
+            "name": "Refrigerator",
+            "category": "Appliances",
+            "attributes": [
+              {"name": "Brand", "value": "ABC", "isSuggested": true},
+              {"name": "Capacity", "value": "300L", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 7,
+            "name": "Necklace",
+            "category": "Jewelry",
+            "attributes": [
+              {"name": "Material", "value": "Gold", "isSuggested": true},
+              {"name": "Stone", "value": "Diamond", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 8,
+            "name": "Earrings",
+            "category": "Jewelry",
+            "attributes": [
+              {"name": "Material", "value": "Silver", "isSuggested": false},
+              {"name": "Stone", "value": "Sapphire", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 9,
+            "name": "Sofa",
+            "category": "Furniture",
+            "attributes": [
+              {"name": "Color", "value": "Grey", "isSuggested": false},
+              {"name": "Material", "value": "Fabric", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 10,
+            "name": "Dining Table",
+            "category": "Furniture",
+            "attributes": [
+              {"name": "Color", "value": "Brown", "isSuggested": true},
+              {"name": "Material", "value": "Wood", "isSuggested": false}
+            ]
+          }
+    ]
 }
