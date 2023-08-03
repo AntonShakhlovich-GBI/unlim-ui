@@ -1,6 +1,6 @@
 {
     "products": [
-        {
+          {
             "id": 1,
             "name": "T-Shirt",
             "category": "Clothes",
@@ -88,6 +88,96 @@
             "attributes": [
               {"name": "Color", "value": "Brown", "isSuggested": true},
               {"name": "Material", "value": "Wood", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 11,
+            "name": "Hoodie",
+            "category": "Clothes",
+            "attributes": [
+              {"name": "Color", "value": "Grey", "isSuggested": true},
+              {"name": "Size", "value": "XL", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 12,
+            "name": "Sneakers",
+            "category": "Shoes",
+            "attributes": [
+              {"name": "Color", "value": "Black", "isSuggested": true},
+              {"name": "Size", "value": "9", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 13,
+            "name": "Microwave",
+            "category": "Appliances",
+            "attributes": [
+              {"name": "Brand", "value": "PQR", "isSuggested": false},
+              {"name": "Wattage", "value": "1000W", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 14,
+            "name": "Oven",
+            "category": "Appliances",
+            "attributes": [
+              {"name": "Brand", "value": "LMN", "isSuggested": true},
+              {"name": "Capacity", "value": "40L", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 15,
+            "name": "Bracelet",
+            "category": "Jewelry",
+            "attributes": [
+              {"name": "Material", "value": "Silver", "isSuggested": true},
+              {"name": "Stone", "value": "Emerald", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 16,
+            "name": "Ring",
+            "category": "Jewelry",
+            "attributes": [
+              {"name": "Material", "value": "Gold", "isSuggested": false},
+              {"name": "Stone", "value": "Ruby", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 17,
+            "name": "Cabinet",
+            "category": "Furniture",
+            "attributes": [
+              {"name": "Color", "value": "White", "isSuggested": true},
+              {"name": "Material", "value": "Wood", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 18,
+            "name": "Bed",
+            "category": "Furniture",
+            "attributes": [
+              {"name": "Color", "value": "Brown", "isSuggested": false},
+              {"name": "Material", "value": "Leather", "isSuggested": true}
+            ]
+          },
+          {
+            "id": 19,
+            "name": "Polo Shirt",
+            "category": "Clothes",
+            "attributes": [
+              {"name": "Color", "value": "Green", "isSuggested": true},
+              {"name": "Size", "value": "M", "isSuggested": false}
+            ]
+          },
+          {
+            "id": 20,
+            "name": "Sandals",
+            "category": "Shoes",
+            "attributes": [
+              {"name": "Color", "value": "Brown", "isSuggested": false},
+              {"name": "Size", "value": "7", "isSuggested": true}
             ]
           }
     ]
