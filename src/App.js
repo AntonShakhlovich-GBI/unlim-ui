@@ -1,17 +1,18 @@
-import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductItem from "./ProductItem";
 
+import "./App.css";
+
 const App = () => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const serverUri = "http://localhost:8000";
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Fetch the list of products from the API and update state
     axios
-      .get(`${serverUri}/products`)
+      .get("http://localhost:8000/products")
       .then((response) => {
         setProducts(response.data);
       })
@@ -21,14 +22,17 @@ const App = () => {
   }, []);
 
   const handleProcessClick = (productId) => {
+    setIsLoading(true);
     axios
-      .get(`${serverUri}/products/${productId}`)
+      .get(`http://localhost:8000/products/${productId}`)
       .then((response) => {
         // Update the selected product with enriched data
         setSelectedProduct({ ...response.data, id: productId });
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error enriching product:", error);
+        setIsLoading(false);
       });
   };
 
@@ -60,7 +64,11 @@ const App = () => {
           </div>
         </div>
         <div className="col-md-6">
-          {selectedProduct && (
+          {isLoading ? (
+            <div className="text-center">
+              <i className="fas fa-spinner fa-spin"></i> Loading...
+            </div>
+          ) : selectedProduct ? (
             <div>
               <h2>Product Description</h2>
               <div className="product-details">
@@ -88,6 +96,8 @@ const App = () => {
                 )}
               </div>
             </div>
+          ) : (
+            <div className="text-center">Select a product to view details</div>
           )}
         </div>
       </div>

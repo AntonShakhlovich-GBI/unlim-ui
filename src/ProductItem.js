@@ -7,7 +7,12 @@ const ProductItem = ({ product, onProcessClick }) => {
       <td>{product.name}</td>
       <td>{product.category}</td>
       <td>
-        <button onClick={() => onProcessClick(product.id)}>Process</button>
+        <button
+          className="btn btn-success"
+          onClick={() => onProcessClick(product.id)}
+        >
+          Process
+        </button>
       </td>
     </tr>
   );
