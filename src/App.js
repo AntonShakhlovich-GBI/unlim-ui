@@ -24,9 +24,9 @@ const App = () => {
     setSelectedProduct(null);
     setIsLoading(true);
     // Fetch the list of products with pagination and search query
-    let uri = `http://localhost:8000/products?_page=${currentPage}&_limit=${pageSize}`;
+    let uri = `http://unlim-vision-backend-service.hackathon-team-4/api/products?_page=${currentPage}&_limit=${pageSize}`;
     if (!!searchQuery) {
-      uri += `&name=${encodeURIComponent(searchQuery)}`;
+      uri += `&query=${encodeURIComponent(searchQuery)}`;
     }
 
     axios
@@ -47,7 +47,9 @@ const App = () => {
   const handleProcessClick = (productId) => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:8000/products/${productId}`)
+      .get(
+        `http://unlim-vision-backend-service.hackathon-team-4/api/enrich/${productId}`
+      )
       .then((response) => {
         // Update the selected product with enriched data
         setSelectedProduct({ ...response.data, id: productId });
@@ -225,7 +227,7 @@ const App = () => {
                           key={attr.name}
                           className={attr.isSuggested ? "is-suggested" : ""}
                         >
-                          {attr.name}: {attr.value}
+                          {attr.name}: {attr.value} | {attr.suggestedValue}
                         </li>
                       ))}
                     </ul>
